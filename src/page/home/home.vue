@@ -13,6 +13,7 @@
           <!-- <div>-</div> -->
         </div>
         <input
+          class="input-first-menu"
           @input="handleAddFistMenuInput"
           @keyup.enter="handleAddFistMenu"
           type="text"
