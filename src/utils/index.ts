@@ -1,12 +1,12 @@
-export function setSessionStorage(key: string, value: any) {
+export function setLocalStorage(key: string, value: any) {
   let storeValue: any = value;
   if (typeof value === "object") {
     storeValue = JSON.stringify(value);
   }
-  window.sessionStorage.setItem(key, value);
+  window.localStorage.setItem(key, value);
 }
 
-export function getSessionStorage(key: string) {
-  const value = window.sessionStorage.getItem(key);
+export function getLocalStorage(key: string) {
+  const value = window.localStorage.getItem(key);
   return value && JSON.parse(value);
 }

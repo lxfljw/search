@@ -28,7 +28,7 @@
 <script lang="ts">
 import { ref, onMounted } from "vue";
 import { MenuItem } from "./type";
-import { setSessionStorage, getSessionStorage } from "../../utils";
+import { setLocalStorage, getLocalStorage } from "../../utils";
 
 export default {
   data() {
@@ -40,7 +40,7 @@ export default {
   setup() {
     const menuList = ref<MenuItem[]>([]);
     const initMenuList = () => {
-      const storageList: MenuItem[] = getSessionStorage("menuList");
+      const storageList: MenuItem[] = getLocalStorage("menuList");
       console.log(storageList);
       menuList.value = storageList;
     };
@@ -61,7 +61,7 @@ export default {
         name: this.firstMenuInputValue,
       });
     },
-    handleAddFistMenuInput(e) {
+    handleAddFistMenuInput(e: any) {
       this.firstMenuInputValue = e.target.value;
       console.log(e.target.value);
     },
